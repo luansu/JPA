@@ -22,7 +22,7 @@ public class Rating implements Serializable{
 	private Books book;
 	
 	@ManyToOne
-	@JoinColumn(name="id", insertable = false, updatable = false)
+	@JoinColumn(name="userid", insertable = false, updatable = false)
 	private Users user;
 
 	public Rating() {
