@@ -25,8 +25,14 @@ public class RatingDAOImp implements IRatingDAO{
 	}
 
 	public void insert(Rating rating) {
-		// TODO Auto-generated method stub
-		
+		try {
+			trans.begin();
+			enma.persist(rating);
+			trans.commit();
+		} catch (Exception e) {
+			e.printStackTrace();
+			trans.rollback();
+		}
 	}
 
 	public void delete(int bookid, int userid) throws Exception {
@@ -35,8 +41,14 @@ public class RatingDAOImp implements IRatingDAO{
 	}
 
 	public void update(Rating rating) {
-		// TODO Auto-generated method stub
-		
+		try {
+			trans.begin();
+			enma.merge(rating);
+			trans.commit();
+		} catch (Exception e) {
+			e.printStackTrace();
+			trans.rollback();
+		}
 	}
 	
 }

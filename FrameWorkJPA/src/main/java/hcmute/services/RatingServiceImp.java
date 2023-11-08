@@ -18,8 +18,7 @@ public class RatingServiceImp implements IRatingService{
 	}
 
 	public void insert(Rating rating) {
-		// TODO Auto-generated method stub
-		
+		ratingDAO.insert(rating);
 	}
 
 	public void delete(int bookid, int userid) throws Exception {
@@ -28,8 +27,7 @@ public class RatingServiceImp implements IRatingService{
 	}
 
 	public void update(Rating rating) {
-		// TODO Auto-generated method stub
-		
+		ratingDAO.update(rating);
 	}
 	
 }
